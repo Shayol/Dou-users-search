@@ -1,0 +1,31 @@
+
+
+<%= search_form_for @q do |f| %>
+
+
+<%= f.label :name_or_description_cont %>
+<%= f.search_field :name_or_description_cont %>
+
+<%= f.submit %>
+<% end %>
+
+  <table class="table table-striped">
+
+    <tr>
+     <th><%= sort_link(@q, :name, 'Name', default_order: :desc) %></th>
+      <th>Description</th>
+      <th>Link to user profile</th>
+    </tr>
+
+  <% @users.each do |user| %>
+
+    <tr>
+
+      <td><%= user.name %></td>
+      <td><%= user.description %></td>
+      <td><%= user.url %></td>
+
+    </tr>
+
+  <% end %>
+  </table>
