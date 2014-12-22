@@ -15,3 +15,51 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background-color: #bbc3c8;
+}
+
+h2 {
+  color: #292929;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: 100;
+  line-height: 40px;
+  letter-spacing: 0px;
+  padding: 0 0 20px;
+  border-bottom: double #555;
+}
+
+table {
+  margin-top: 15px;
+  padding-top: 10px;
+  padding-left: 10px;
+  background-color: #91A7A8;
+  -webkit-box-shadow: 12px 12px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    12px 12px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         12px 12px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+th {
+  text-align: center;
+}
+
+#search-form {
+  margin-top: 15px;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+#users {
+  text-align: center;
+  margin-left: 0px;
+  padding: 1px;
+  color: #F01C05;
+  font-size: 15px;
+  letter-spacing: -1px;
+}
+
