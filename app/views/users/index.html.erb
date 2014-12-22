@@ -1,18 +1,28 @@
+<h2> Find <a href="http://dou.ua/" > DOU.UA </a> user by his name, company or other information in his profile </h2>
 
+<div class="row" id="search-form" >
+  <div class="col-md-9 col-md-offset-1">
 
-<%= search_form_for @q do |f| %>
+    <%= search_form_for @q do |f| %>
 
+      <%= f.label :name_or_company_or_description_cont %>
+      <%= f.search_field :name_or_company_or_description_cont %>
 
-<%= f.label :name_or_description_cont %>
-<%= f.search_field :name_or_description_cont %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 
-<%= f.submit %>
-<% end %>
+  <span class="col-md-2" id="users">
+    <em><%= @database %></em> users
+  </span>
 
-  <table class="table table-striped">
+</div>
 
+  <table class="table table-striped table-hover table-bordered">
+    <%= will_paginate @users %>
     <tr>
-     <th><%= sort_link(@q, :name, 'Name', default_order: :desc) %></th>
+      <th><%= sort_link(@q, :name, 'Name', default_order: :asc) %></th>
+      <th><%= sort_link(@q, :company, 'Company', default_order: :asc) %></th>
       <th>Description</th>
       <th>Link to user profile</th>
     </tr>
@@ -22,8 +32,9 @@
     <tr>
 
       <td><%= user.name %></td>
+      <td><%= user.company %></td>
       <td><%= user.description %></td>
-      <td><%= user.url %></td>
+      <td><%= link_to user.url, user.url %></td>
 
     </tr>
 
