@@ -1,4 +1,4 @@
-<h2> Find <a href="http://dou.ua/" > DOU.UA </a> user by his name, company or other information in his profile </h2>
+<h2> Find <a href="http://dou.ua/", target="_blank" > DOU.UA </a> user by his name, company or other information in his profile </h2>
 
 <div class="row" id="search-form" >
   <div class="col-md-9 col-md-offset-1">
@@ -13,7 +13,7 @@
   </div>
 
   <span class="col-md-2" id="users">
-    <em><%= @database %></em> users
+    <strong><%= pluralize(@users.count, "user") %></strong>
   </span>
 
 </div>
@@ -22,20 +22,16 @@
     <%= will_paginate @users %>
     <tr>
       <th><%= sort_link(@q, :name, 'Name') %></th>
-      <th><%= sort_link(@q, :company, 'Company') %></th>
+      <th>Company</th>
       <th>Description</th>
-      <th>Link to user profile</th>
     </tr>
 
   <% @users.each do |user| %>
 
     <tr>
-
-      <td><%= user.name %></td>
+      <td><%= link_to user.name, user.url, target: "_blank" %></td>
       <td><%= user.company %></td>
       <td><%= user.description %></td>
-      <td><%= link_to user.url, user.url, target: "_blank" %></td>
-
     </tr>
 
   <% end %>
