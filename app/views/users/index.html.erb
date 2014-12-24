@@ -21,8 +21,8 @@
   <table class="table table-striped table-hover table-bordered">
     <%= will_paginate @users %>
     <tr>
-      <th><%= sort_link(@q, :name, 'Name', default_order: :asc) %></th>
-      <th><%= sort_link(@q, :company, 'Company', default_order: :asc) %></th>
+      <th><%= sort_link(@q, :name, 'Name') %></th>
+      <th><%= sort_link(@q, :company, 'Company') %></th>
       <th>Description</th>
       <th>Link to user profile</th>
     </tr>
