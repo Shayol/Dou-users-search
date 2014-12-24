@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   def index
     @q = User.search(params[:q])
     @users = @q.result(distinct: true).order("company is null ASC, company ASC", "name ASC").paginate(:page => params[:page], :per_page => 10)
-    @database = @users.count
   end
 
   private
