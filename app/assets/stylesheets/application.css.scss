@@ -39,6 +39,7 @@ table {
   padding-top: 10px;
   padding-left: 10px;
   background-color: #91A7A8;
+  text-align: center;
   -webkit-box-shadow: 12px 12px 5px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow:    12px 12px 5px 0px rgba(50, 50, 50, 0.75);
   box-shadow:         12px 12px 5px 0px rgba(50, 50, 50, 0.75);
@@ -53,13 +54,12 @@ a:not([href="http://dou.ua/"]):visited { color: #FF7070;; }
 #search-form {
   margin-top: 15px;
   padding-top: 10px;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 #users {
   text-align: center;
-  margin-left: 0px;
   padding: 1px;
   color: #F01C05;
   font-size: 15px;

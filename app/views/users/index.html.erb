@@ -1,24 +1,24 @@
 <h2> Find <a href="http://dou.ua/", target="_blank" > DOU.UA </a> user by his name, company or other information in his profile </h2>
 
 <div class="row" id="search-form" >
-  <div class="col-md-9 col-md-offset-1">
+  <div class="col-md-8 col-md-offset-1 well">
 
-    <%= search_form_for @q do |f| %>
-
-      <%= f.label :name_or_company_or_description_cont %>
-      <%= f.search_field :name_or_company_or_description_cont %>
-
-      <%= f.submit %>
+    <%= search_form_for @q, :html => {:class => "form-inline"} do |f| %>
+      <div class="form-group">
+        <%= f.label :name_or_company_or_description_cont %>
+        <%= f.search_field :name_or_company_or_description_cont, class: 'form-control' %>
+      </div>
+        <%= f.submit class: "btn btn-info" %>
     <% end %>
   </div>
 
-  <span class="col-md-2" id="users">
+  <span class="col-md-2 col-md-offset-1" id="users">
     <strong><%= pluralize(@users.count, "user") %></strong>
   </span>
 
 </div>
 
-  <table class="table table-striped table-hover table-bordered">
+  <table class="table table-striped table-bordered">
     <%= will_paginate @users %>
     <tr>
       <th><%= sort_link(@q, :name, 'Name') %></th>
