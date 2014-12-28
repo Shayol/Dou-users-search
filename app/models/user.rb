@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
 
   def self.fetch_dou_users
 
-    require 'rubygems'
-    require 'nokogiri'
     require 'open-uri'
 
     forums_page = Nokogiri::HTML(open(DOU_FORUM_URL))
